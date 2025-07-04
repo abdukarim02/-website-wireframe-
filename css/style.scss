@@ -57,7 +57,7 @@ body {
 }
 .title {
     margin: 15px 0;
-    @include stylefontz( 900, clamp(40px, 3vw, 45px),  $secondary);
+    @include stylefontz( 900, clamp(25px, 2vw, 45px),  $secondary);
     letter-spacing: 0.07em;
     text-transform: uppercase;
 }
@@ -75,6 +75,10 @@ body {
         border-radius: 5px;
     }
 }
+.black {
+    background: $secondary !important;
+}
+/*--------------------*/
 .header {
     width: 100%;
     height: 123px;
@@ -100,7 +104,7 @@ body {
 		&__list-link {
             padding: 50px 17px;
             transition: all 0.3s ease-in;
-            @include stylefontz( 600, 15px, $white);
+            @include stylefontz( 600, clamp(10px, 1vw, 15px), $white);
             letter-spacing: 0.1em;
             text-transform: uppercase;
             &:hover {
@@ -132,10 +136,101 @@ body {
 		&__content-bg {
             width: 427px;
             height: 427px;
+            animation: moveBg 3s infinite linear alternate;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
             }
+		}
+}
+@keyframes moveBg {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px); /* Можешь изменить направление/силу */
+  }
+}
+.box-index {
+    margin-top: -195px !important;
+}
+.box {
+    margin-top: 100px;
+		&__content {
+            @include stylcenter( flex, center, space-between);
+		}
+		&__content-flex {
+            padding: 30px;
+            background: $primary;
+            cursor: pointer;
+		}
+		&__flex-name {
+            @include stylefontz( 600, clamp(15px, 2vw,  25px),  $white);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+		}
+		&__flex-text {
+            padding: 15px 0;
+            letter-spacing: 0.07em;
+            color: $white;
+		}
+		&__flex-btn {
+		}
+}
+.about {
+    margin-top: 100px;
+		&__content {
+            @include stylcenter( flex, center, space-between);
+		}
+		&__content-bg {
+            width: 49%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+		}
+		&__content-info {
+            width: 49%;
+            height: 100%;
+		}
+		&__info-text {
+            margin-bottom: 25px;
+		}
+		&__info-icon {
+            margin-top: 5px;
+            @include stylcenter( flex, center, space-between);
+		}
+		&__lcon-list {
+            width: 50%;
+		}
+		&__black-logo {
+            @include stylcenter( flex, center, unset);
+            margin-bottom: 15px;
+            gap: 15px;
+		}
+		&__info-counter {
+            margin-top: 15px;
+            @include stylcenter( flex, center, space-around);
+		}
+        &__counter-body {
+            width: 30%;
+        }
+		&__body-number {
+            display: block;
+            width: 100%;
+            @include stylefontz( 900, clamp(30px, 3vw, 45px),  $primary);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 5px;
+		}
+		&__body-name {
+             @include stylefontz( 900, 15px,   $secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
 		}
 }

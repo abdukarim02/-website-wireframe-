@@ -20,4 +20,17 @@ function includeHTML() {
     }
   });
 }
+
 document.addEventListener("DOMContentLoaded", includeHTML);
+ const bg = document.querySelector('.main__content-bg');
+  let direction = 1;
+  let pos = 0;
+
+  function animateBg() {
+    pos += 0.3 * direction;
+    if (pos > 20 || pos < 0) direction *= -1;
+    bg.style.transform = `translateY(${pos}px)`;
+    requestAnimationFrame(animateBg);
+  }
+
+  animateBg();

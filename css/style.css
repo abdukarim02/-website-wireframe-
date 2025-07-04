@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Sora:wght@100..800&family=Tenor+Sans&display=swap");
 * {
   padding: 0;
@@ -99,7 +100,7 @@ body {
 .title {
   margin: 15px 0;
   font-weight: 900;
-  font-size: clamp(40px, 3vw, 45px);
+  font-size: clamp(25px, 2vw, 45px);
   color: #1b1717;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -125,6 +126,11 @@ body {
   border-radius: 5px;
 }
 
+.black {
+  background: #1b1717 !important;
+}
+
+/*--------------------*/
 .header {
   width: 100%;
   height: 123px;
@@ -159,7 +165,7 @@ body {
   padding: 50px 17px;
   transition: all 0.3s ease-in;
   font-weight: 600;
-  font-size: 15px;
+  font-size: clamp(10px, 1vw, 15px);
   color: #fff;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -197,10 +203,118 @@ body {
 .main__content-bg {
   width: 427px;
   height: 427px;
+  animation: moveBg 3s infinite linear alternate;
 }
 .main__content-bg img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px); /* Можешь изменить направление/силу */
+  }
+}
+.box-index {
+  margin-top: -195px !important;
+}
+
+.box {
+  margin-top: 100px;
+}
+.box__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box__content-flex {
+  padding: 30px;
+  background: #757575;
+  cursor: pointer;
+}
+.box__flex-name {
+  font-weight: 600;
+  font-size: clamp(15px, 2vw, 25px);
+  color: #fff;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.box__flex-text {
+  padding: 15px 0;
+  letter-spacing: 0.07em;
+  color: #fff;
+}
+.about {
+  margin-top: 100px;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about__content-bg {
+  width: 49%;
+  height: 100%;
+}
+.about__content-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about__content-info {
+  width: 49%;
+  height: 100%;
+}
+.about__info-text {
+  margin-bottom: 25px;
+}
+.about__info-icon {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about__lcon-list {
+  width: 50%;
+}
+.about__black-logo {
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+.about__info-counter {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.about__counter-body {
+  width: 30%;
+}
+.about__body-number {
+  display: block;
+  width: 100%;
+  font-weight: 900;
+  font-size: clamp(30px, 3vw, 45px);
+  color: #757575;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.about__body-name {
+  font-weight: 900;
+  font-size: 15px;
+  color: #1b1717;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
