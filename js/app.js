@@ -1,4 +1,5 @@
-// Функция для подключения внешних HTML-файлов (header.html, footer.html и т.п.)
+//   ====Функция для подключения внешних HTML-файлов ===
+//         (header.html, footer.html и т.п.)
 function includeHTML() {
   // Находим все элементы с атрибутом data-include
   const elements = document.querySelectorAll('[data-include]');
@@ -28,6 +29,23 @@ function includeHTML() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.mobileMenu');
+
+    console.log("burger:", burger);
+    console.log("menu:", menu);
+
+    if (burger && menu) {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            const isMenuActive = menu.classList.toggle('active'); // один вызов toggle
+            console.log('menu is active:', isMenuActive);
+        });
+    } 
+});
+
+
 // Запускаем функцию includeHTML после полной загрузки документа
 document.addEventListener("DOMContentLoaded", includeHTML);
 
@@ -55,21 +73,3 @@ function animateBg() {
   // Повторяем анимацию на каждом кадре
   requestAnimationFrame(animateBg);
 }
-
-// Запускаем анимацию при загрузке
-animateBg();
-
-// Инициализация Swiper-слайдера
-var swiper = new Swiper(".mySwiper", {
-  spaceBetween: 35,           // Расстояние между слайдами
-  slidesPerView: "auto",      // Показывать столько слайдов, сколько помещается
-  loop: true,                 // Зацикливание: после последнего слайда переходит к первому
-  speed: 3000,                // Время одного полного перехода между слайдами (мс)
-  
-  autoplay: {
-    delay: 1,                 // Минимальная задержка — почти мгновенно начинает следующий слайд
-    disableOnInteraction: false, // Не отключать autoplay при взаимодействии
-  },
-
-  allowTouchMove: false       // Запрет ручной прокрутки (чтобы анимация не прерывалась)
-});
