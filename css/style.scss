@@ -39,6 +39,7 @@ $font-family: "Poppins", sans-serif;
 /*--------------------*/
 body {
     font-family: $font-family;
+    position: relative;
 }
 .container {
     max-width: 1260px;
@@ -49,6 +50,7 @@ body {
     width: 100%;
     height: 100vh;
     background: #959595;
+    overflow: hidden;
 }
 .subtitle {
     @include stylefontz( 900, clamp(10px, 3vw, 17px),  $primary);
@@ -95,9 +97,11 @@ body {
     border-bottom: 1px solid $border-color-overlay;
     @include stylcenter( flex, center, center);
 		&__content {
+            position: relative;
             width: 100%;
             height: 100%;
             @include stylcenter( flex, center, space-between);
+            z-index: 5;
 		}
 		&__content-logo {
             width: 245px;
@@ -127,12 +131,15 @@ body {
       @include stylcenter( none, start, space-around);
       flex-direction: column;
       background: transparent;
-    span {
-      display: block;
-      width: 38px;
-      height: 6px;
-     background: $white;
-    }  
+      position: absolute;
+      right: 20px;
+      z-index: 2;
+      span {
+            display: block;
+            width: 38px;
+            height: 6px;
+            background: $white;
+      }  
 }
 .main {
     margin-top: 100px;
@@ -144,7 +151,7 @@ body {
 		}
 		&__info-title {
             margin: 15px 0;
-            @include stylefontz(900, clamp(30px, 3vw, 60px), $white);
+            @include stylefontz(900, clamp(30px, 5vw, 60px), $white);
             letter-spacing: 0.07em;
             text-transform: uppercase;
 		}
@@ -457,13 +464,49 @@ body {
 @media (max-width: 860px) {
       .header {
             &__content-menu {
-                  display: none;
-                  .active {
-                        display: block;
+                  transform: translateX(150%);
+                  transition: all 0.3s ease-in;
+                  width: 100%;
+                  height: 100vh;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  z-index: 1;
+                  background: $rating-color;
+                  @include stylcenter( flex, center, space-evenly);
+                  flex-direction: column;
+                  &.active {
+                        transform: translateX(0);
+                        
                   }
             }
       }
       .burger {
             display: flex;
+      }
+      .main {
+            &__content {
+                  flex-direction: column;
+                  gap: 20px;
+            }
+            &__content-info {
+                  width: 100%;
+            }
+            &__content-bg {
+                  animation: none;
+            }
+      }
+      .box {
+            margin-top: 195px;
+            &__content  {
+                  flex-direction: column;
+            }
+            .container {
+                  padding: 0;
+                  max-width: 100%;
+            }
+            &__content-flex {
+                  width: 100%;
+            }
       }
 }
