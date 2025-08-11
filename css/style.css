@@ -647,4 +647,50 @@ body {
   .box__content-flex {
     width: 100%;
   }
+  .about__content {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .about__content-bg, .about__content-info {
+    width: 100%;
+  }
+  .procerdure__content-wrap {
+    gap: 25px;
+  }
+  .procerdure__wrap-flex {
+    flex: 0 1 100%;
+  }
+  .partfolio__content {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .partfolio__content-bg, .partfolio__content-info {
+    width: 100%;
+  }
+  .advantages__content {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .advantages__content-bg, .advantages__content-info {
+    width: 100%;
+  }
+  .testimonial__content {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .testimonial__content-clients, .testimonial__content-info {
+    width: 100%;
+  }
+  .footer {
+    padding-top: 30px;
+  }
+  .footer__content-top {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .footer__content-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
