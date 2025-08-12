@@ -602,6 +602,20 @@ body {
   color: #fff;
 }
 
+.background {
+  overflow: hidden;
+  background: #959595;
+}
+.background__content {
+  background-image: url(/images/hero.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 115px 20px 101px;
+}
+.background__content .main__info-text {
+  width: 60%;
+}
+
 @media (max-width: 860px) {
   .header__content-menu {
     transform: translateX(150%);
@@ -626,12 +640,14 @@ body {
   }
   .main__content {
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
   .main__content-info {
     width: 100%;
   }
   .main__content-bg {
+    width: 60%;
+    height: 60%;
     animation: none;
   }
   .box {
@@ -692,5 +708,13 @@ body {
   .footer__content-bottom {
     flex-direction: column;
     gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .footer__info-text {
+    width: 100%;
+  }
+  .footer__bottom-site {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
